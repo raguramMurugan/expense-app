@@ -1,16 +1,12 @@
 package com.hubino.expensetrackingapp.entity;
-
-import java.time.Instant;
-import java.util.List;
-
+import java.util.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,12 +22,16 @@ public class Activity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer activityId;
 	
-	
-	@Positive
 	private Integer thingsId;
 	
-	@Positive
+	private String thingsName;
+	
 	private Integer quantity;
 	
-	private Instant time_date;
+	@Temporal(TemporalType.DATE)
+	private Date date=new Date(System.currentTimeMillis());
+	
+	private Double billAmount;
+	
+	
 }
