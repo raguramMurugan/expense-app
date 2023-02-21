@@ -6,6 +6,6 @@ import com.hubino.expensetrackingapp.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 
-	User findUserByUsernameAndPassword(String userName, String password);
+	User findUserByUsernameAndEmail(String userName, String email);
 
 }
