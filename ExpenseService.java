@@ -1,9 +1,16 @@
 package com.hubino.expensetrackingapp.service;
 
-import com.hubino.expensetrackingapp.dto.TrackerDto;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import com.hubino.expensetrackingapp.entity.Activity;
+import com.hubino.expensetrackingapp.entity.ExpenseTracker;
 
 public interface ExpenseService {
 
-	Double calculateBillAmount(TrackerDto trackerDto);
+	public Double calculateBillAmount(List<Activity> activity);
+
+	public void save(ExpenseTracker tracker);
 
 }
